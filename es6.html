@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <title>Javascript Quick Reference: ES6</title>
+      <style>
+         @import url(style.css);
+         @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap');
+      </style>
+   </head>
+   <body>
+      <nav>
+         <div class="navLink"><a href="index.html">Index</a></div>
+         <div class="vl"></div>
+         <div class="navLink"><a href="strings.html">Strings</a></div>
+         <div class="vl"></div>
+         <div class="navLink"><a href="arrays.html">Arrays</a></div>
+         <div class="vl"></div>
+         <div class="navLink"><a href="es6.html">ES6</a></div>
+         <div class="vl"></div>
+      </nav>
+      <header>
+         <h1>The Javascript<br />
+            Notebook</h1>
+      </header>
+
+      <main>
+         <section>
+            <div class="topContent">
+               <div class="topItem">
+                  <h2>About ECMA Script 6</h2>
+                  <p>ECMA Script 6 (Known also as ES6) is a major revision for the Javascript standard that was released in 2015. While there have been more revisions since that time, ES6 is notable for a number of new functionalities that was designed to simplify some functions of Javascript while simultaneously modernizing the language. Because ES6 was released in 2015, that means its features are safe to use on all modern browsers. There is little reason not to use them!</p>
+                  <p>This page will only go over several of the most significant updates, features that any Javascript developer should be using.</p>
+                  <div class="toc">
+                     <h5>Table of Contents:</h5>
+                     <a href="#let">The Let Statement</a><br />
+                     <a href="#arrow">The Arrow Function Expression</a><br />
+                     <a href="#defval">Default Parameter Values</a><br />
+                  </div>
+               </div>
+               <figure class="imageContainer">
+                  <img src="img/js_es6_pic.jpg" alt="What an array looks like">
+                  <figcaption>ES6 makes Javascript easier to read and more flexible than ever.</figcaption>
+               </figure>
+            </div>
+         </section>
+         <div class="dline"></div>
+         <section>
+
+            <div id="let"></div><br />
+            <h2>The Let Statement</h2>
+            <p>In Javascript, variables should now be declared by using the let statement.</p>
+            <div class="footnotes">
+               <p>let <strong><span class="themeCol1">myVariable</span></strong> = "Welcome to the Javascript Notebook."</p>
+            </div>
+            <p>The let statement works by giving <strong>block scope</strong> to all variables declared in this way. Block scope means that any variable placed within brackets <strong>{ }</strong> will only be visible inside those brackets. This means a variable declared using let in an if statement will only be visible in that statement.</p>
+            <p>On the Internet, there are still many websites and tutorials that instruct new users of Javascript to get comfy with declaring their variables by the var statement. This <em>does not work</em> the same way as let. Variables declared with var possess <strong>function scope</strong> instead, meaning that all variables declared in a function are visible anywhere within the function. Since ES6 though, the Let statement should be considered the <em>standard use</em> case for declaring most variables. While var may not be deprecated, there are no real advantages to using it.</p>
+
+            <div id="arrow"></div><br />
+            <h2>The Arrow Function Expression</h2>
+            <p>ES6 provides an alternative way to create function expressions. The main advantage to arrow functions is that they are easier to read and contain an implicit return (Unless you use the brackets style). This means you must return some value using them though.</p>
+            <div class="footnotes">
+               <p>let <strong><span class="themeCol1">myArrow</span></strong> = (x, y) => <strong>Math</strong>.pow(x, y);<br />
+               console.log(myArrow(2,3))<br />
+               <p>let <strong><span class="themeCol1">myArrow2</span></strong> = (x, y) => { return <strong>Math</strong>.pow(x, y) };<br /><br />
+               <em>Expected outputs for both: 8</em></p><br />
+            </div>
+            <p>In the two examples above, we are declaring a variable and setting it equal to a function, a legal move in Javascript known as a <strong>function expression</strong>. Both of these examples use the arrow expression form, but pay close attention to the second use case where brackets are included: Brackets allow for the arrow expression to occupy <em>multiple lines</em>, but this form requires an <strong>explicit return</strong> statement.</p>
+
+            <div id="defval"></div><br />
+            <h2>Default Parameter Values</h2>
+            <p>Prior to ES6, when creating a function definition it was not possible to define default values for the function parameters. Of course this means that using a function without declaring a specific value will result in the default one rather than undefined.</p>
+            <div class="footnotes">
+               <p><strong><span class="themeCol1">function</span></strong> <strong>addition</strong>(a, b = 4) {<br />
+                  return a + b;<br />
+                  }<br />
+                  console.log(addition(2))<br /></p>
+               <p><em>Expected result:</em> 6</p>
+            </div>
+            <p>In this brief example, its evident that the function would <em>normally</em> require two arguments. Since a default value is specified for the parameter <strong>b</strong>, the second value falls back to the default of 4.</p>
+
+         </section>
+         <div class="dline"></div>
+         <section>
+            <div class="footnotes">
+               <h3>Sources</h3>
+               <p class="smallText">ES6-Features.org: <a href="http://es6-features.org/" target="_blank">http://es6-features.org/</a></p>
+               <p class="smallText">W3 Schools About ES6: <a href="https://www.w3schools.com/Js/js_es6.asp" target="_blank">https://www.w3schools.com/Js/js_es6.asp/</a></p>
+               <p class="smallText">Medium.com <a href="https://medium.com/javascript-in-plain-english/javascript-es6-tutorial-a-complete-crash-course-on-modern-js-a09294bffdb7" target="_blank">Javascript in Plain English: ES6:</a></p>
+            </div>
+         </section>
+      </main>
+      <footer>
+         <p>&copy; 2020 Christopher Boyd. This website is intended for educational purposes only.</p>
+      </footer>
+   </body>
+</html>

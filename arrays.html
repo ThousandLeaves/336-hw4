@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <title>Javascript Quick Reference: Arrays</title>
+      <style>
+         @import url(style.css);
+         @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap');
+      </style>
+   </head>
+   <body>
+      <nav>
+         <div class="navLink"><a href="index.html">Index</a></div>
+         <div class="vl"></div>
+         <div class="navLink"><a href="strings.html">Strings</a></div>
+         <div class="vl"></div>
+         <div class="navLink"><a href="arrays.html">Arrays</a></div>
+         <div class="vl"></div>
+         <div class="navLink"><a href="es6.html">ES6</a></div>
+         <div class="vl"></div>
+      </nav>
+
+      <header>
+         <h1>The Javascript<br />
+            Notebook</h1>
+      </header>
+
+
+      <main>
+         <section>
+            <div class="topContent">
+               <div class="topItem">
+                  <h2>Arrays</h2>
+                  <p>As in most programming languages, the array in Javascript is a <strong>built-in object</strong>. While Javascript allows you to store key-value pair objects, arrays work like an ordered-list that we can re-order and iterate through. Unlike some languages, the size of an array does not need to be set on declaration, and arrays are effectively dynamic. All arrays are capable of accepting mixed data types.</p>
+                  <div class="footnotes">
+                     <p>let <strong><span class="themeCol1">myArray</span></strong> = ["hello", 1, "goodbye] </p>
+                     <p>let <strong><span class="themeCol1">myArray2</span></strong> = <strong>new</strong> Array(<span class="themeCol1">size</span>)</p>
+                  </div>
+               </div>
+               <figure class="imageContainer">
+                  <img src="img/js_arr_pic.jpg" alt="What an array looks like">
+                  <figcaption>Image source: Javatutorial.net</figcaption>
+               </figure>
+            </div>
+         </section>
+         <div class="dline"></div>
+         <section>
+            <h2>Array methods</h2>
+            <p>Click on the buttons to hide content that you don't need to study.</p>
+
+            <button type="button" class="collapse">-&emsp;  Array.forEach()</button>
+            <div class="hideContent"><p><strong>Usage1:</strong> myArray.forEach(callback(elem1, [elem2, ...])) </p>
+            <p><strong>Usage2:</strong> myArray.forEach((parameters) => { statements }); </p>
+               <p>The forEach method is a syntactically simpler method of performing an <strong>iterative loop</strong> over all array elements. It will operate on an array, running a specified method on each element. The closest traditional comparison to this operation is the for loop.</p>
+               <p>In the first usage example, a <em>callback function</em> is supplied. The second use case shows an <em>arrow function expression</em> instead.</p>
+            </div>
+            <div class="vSpacer"></div>
+
+            <button type="button" class="collapse">-&emsp;  Array.pop()</button>
+            <div class="hideContent"><p><strong>Usage:</strong> let remElement = myArray.pop() </p>
+               <p>Using the pop method will remove the last element from an array. It is important to note that pop() <strong>will change the original array</strong>. The returned value is the element that was on the end of the array.</p>
+            </div>
+            <div class="vSpacer"></div>
+
+            <button type="button" class="collapse">-&emsp;  Array.shift()</button>
+            <div class="hideContent"><p><strong>Usage:</strong> let remElement = myArray.shift() </p>
+               <p>Using the shift method will remove the first element from the front of an array. It is important to note that shift() <strong>will change the original array</strong>. The returned value is the element that was originally the first element in the array.</p>
+               <p><span class="themeCol1">Note:</span> The similarly named method "Array.unshift()" will <strong>add</strong> an element to the beginning of an array instead.</p>
+            </div>
+            <div class="vSpacer"></div>
+
+            <button type="button" class="collapse">-&emsp;  Array.slice()</button>
+            <div class="hideContent"><p><strong>Usage:</strong> let slicedArray = slicedArray.slice([start[, end]) </p>
+               <p>The slice method will remove a portion of an array based on the specified start point and up to <em>(but not including)</em> the given end point. Define these points like you would the indices of the array. If the start point is given as <strong>1</strong> and the end point is <strong>4</strong>, the slice function would remove the 2nd element up to, but <strong>not including</strong> the 5th element. You may also omit an end point and slice out all of the array following the start index.</p>
+
+               <p>It is <span class="themeCol1">important</span> to note that with the slice method, the original array is <strong>not modified</strong>. You must assign the operation to the original array if you wish for the change to be permanent.</p>
+            </div>
+            <div class="vSpacer"></div>
+
+         </section>
+
+         <div class="dline"></div>
+         <section>
+            <div class="footnotes">
+               <h3>Sources</h3>
+               <p class="smallText">Javascript.info Arrays: <a href="https://javascript.info/array-methods" target="_blank">https://javascript.info/array-methods</a></p>
+               <p class="smallText">Mozilla Array Object Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a></p>
+            </div>
+         </section>
+      </main>
+
+      <footer>
+         <p>&copy; 2020 Christopher Boyd. This website is intended for educational purposes only.</p>
+      </footer>
+
+      <script>
+         let collapse = document.getElementsByClassName("collapse");
+         for (let i = 0; i < collapse.length; i++) {
+            collapse[i].addEventListener("click", function() {
+               this.classList.toggle("active");
+               let showContent = this.nextElementSibling;
+               if (showContent.style.display === "none") {
+                  showContent.style.display = "block";
+                  collapse[i].innerHTML = "-" + collapse[i].innerHTML.slice(1);
+               }
+               else {
+                  showContent.style.display = "none";
+                  collapse[i].innerHTML = "+" + collapse[i].innerHTML.slice(1);
+               }
+            });
+         }
+      </script>
+   </body>
+</html>
