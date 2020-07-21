@@ -1,0 +1,82 @@
+<%- include('partials/header.ejs') %>
+
+      <main>
+         <section>
+            <div class="topContent">
+               <div class="topItem">
+                  <h2>Strings</h2>
+                  <p>The string in Javascript is a <strong>built-in object</strong>. You can create a string by assigning it with either the double " " or single ' ' quotation marks. It's important to note that Javascript does not have a <strong>char</strong> type for single characters. In addition to the methods above, a string can also be declared with a backtick. ` ` This allows us to execute an expression similarly to as if you were using Linux shell scripting.</p>
+                  <div class="footnotes">
+                     <p>let <strong><span class="themeCol1">myString1</span></strong> = "This is a string."</p>
+                     <p>let <strong><span class="themeCol1">myString2</span></strong> = 'This is also a string.'</p>
+                     <p>let <strong><span class="themeCol1">myString3</span></strong> = `With backticks, we can embed expressions like this <strong>${Math.pow(2,3)}</strong>. Neat!`</p>
+                  </div>
+               </div>
+               <figure class="imageContainer">
+                  <img src="img/js_str_pic.jpg" alt="Use Strings With Javascript">
+                  <figcaption>The ability to manipulate strings is an important part of a web developer's toolbelt.</figcaption>
+               </figure>
+            </div>
+         </section>
+         <div class="dline"></div>
+         <section>
+            <h2>String methods</h2>
+            <p>Click on the buttons to hide content that you don't need to study.</p>
+
+            <button type="button" class="collapse">-&emsp;  String.charAt()</button>
+            <div class="hideContent"><p><strong>Usage:</strong> let myChar = myString.charAt(i)</p>
+               <p>The index at <strong>i</strong> refers to the specific character in the string, starting at 0. Indexes <em>cannot</em> be negative. Instead use <em>myString.length - 1</em></p>
+            </div>
+            <div class="vSpacer"></div>
+
+            <button type="button" class="collapse">-&emsp;  String.match()</button>
+            <div class="hideContent"><p><strong>Usage:</strong> matchString = myString.match(<span class="themeCol1">regex</span>)</p>
+            <p>The match method will check a string's contents against a <strong>regular expression</strong> and return the first result or all results, the latter only being true if the global flag <em>'g'</em> is set in the expression. The matter of regular expressions is complex and the match options are diverse. You can find out more about them on this <a href="https://www.regular-expressions.info/" target="_blank">external website</a>.</p>
+            </div>
+            <div class="vSpacer"></div>
+
+            <button type="button" class="collapse">-&emsp;  String.substring()</button>
+            <div class="hideContent"><p><strong>Usage:</strong> newString = myString.substring(i, j)</p>
+            <p>Substring creates a new string based on a fragment of an <em>existing string</em>. The start and end points of <strong>i</strong> and <strong>j</strong> refer to the start and end points of the region of the original string to capture. If no end point is specified, substring will return the remaining portion of that string. As before, the first character of a string begins at index 0. When using the substring method, be aware that it does not change the original string. You will need to assign the results of the operation to that original string if you wish for it to become permanent.</p>
+            <p><span class="themeCol1">Note:</span> Use of the similarly named <strong>String.substr</strong> method is discouraged. It is older and remains for legacy purposes.</p>
+            </div>
+            <div class="vSpacer"></div>
+
+            <button type="button" class="collapse">-&emsp;  String.toString()</button>
+            <div class="hideContent"><p><strong>Usage:</strong> let myNum = 15<br/>
+               &emsp;&emsp;&emsp;&ensp;myString = myNum.toString()
+                </p>
+            <p>This simple function will change the <strong>type</strong> of a variable to string. It is not always used, as this operation occurs implicitly when concatenating strings and numbers with the <em>'+'</em> operator.</p>
+            </div>
+
+         </section>
+         <div class="dline"></div>
+         <section>
+            <div class="footnotes">
+               <h3>Sources</h3>
+               <p class="smallText">Mozilla String Object Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String</a></p>
+               <p class="smallText">Javascript.info Strings: <a href="https://javascript.info/string" target="_blank">https://javascript.info/string</a></p>
+            </div>
+         </section>
+      </main>
+      
+      <script>
+         let collapse = document.getElementsByClassName("collapse");
+
+         for (let i = 0; i < collapse.length; i++) {
+            collapse[i].addEventListener("click", function() {
+               this.classList.toggle("active");
+               let showContent = this.nextElementSibling;
+               if (showContent.style.display === "none") {
+                  showContent.style.display = "block";
+                  collapse[i].innerHTML = "-" + collapse[i].innerHTML.slice(1);
+               }
+               else {
+                  showContent.style.display = "none";
+                  collapse[i].innerHTML = "+" + collapse[i].innerHTML.slice(1);
+               }
+            });
+         }
+      </script>
+
+<%- include('partials/footer.ejs') %>
