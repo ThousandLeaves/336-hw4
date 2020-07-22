@@ -129,7 +129,6 @@ main a {
 .footnotes {
    background-color: #E5D7BE;
    border: 1px dotted #82807F;
-   box-sizing: content-box;
    margin-bottom: 6px;
    padding-left: 8px;
    width: 50%;
@@ -263,6 +262,8 @@ button::-moz-focus-inner {
       width: 75vw;
       margin: 0 auto;
       margin-bottom: 10px;
+      height: auto;
+      
    }
    
    .imageContainer {
