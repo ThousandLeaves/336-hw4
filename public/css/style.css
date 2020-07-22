@@ -271,10 +271,12 @@ button::-moz-focus-inner {
  
     .collapse {
       width: 70vw;
+      padding: 8px 0;
    }  
    
    .hideContent {
-      width: calc(60% + 60px);
+      padding: 0 10px;
+      width: 85%;
    }
    
    .navLink {
