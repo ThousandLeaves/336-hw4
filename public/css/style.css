@@ -238,6 +238,12 @@ button::-moz-focus-inner {
    width: calc(60% + 100px);
 }
 
+.wordBreaks {
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   word-break: break-all;
+}
+
 @media screen and (max-width: 600px) {
    
    main {
@@ -287,4 +293,5 @@ button::-moz-focus-inner {
    .vl {
       margin: auto 2px;
    }
+   
 }
